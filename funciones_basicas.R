@@ -12,7 +12,7 @@ leer_dataset <- function(){
 crear_brujula <- function(idb,beer_data){
   columnas_brujula <- c("color","maltoso","licoroso","afrutado","especias","acidez","lupulo_afrutado_citrico","lupulo_floral_herbal","amargor")
   datos <- as.numeric(beer_data[beer_data$id==idb,columnas_brujula])
-  # datos[is.na(datos)] <- 0
+  datos[is.na(datos)] <- 0
   p <- plot_ly(
     type="scatterpolar",
     mode="lines+markers",
